@@ -24,9 +24,10 @@ public class Projectile : MonoBehaviour
     {
         float moveDistance = bulletSpeed * Time.deltaTime;
         checkCollisions(moveDistance);
-        transform.Translate(Vector3.forward * moveDistance);
+        transform.Translate(Vector3.forward * moveDistance);        //projectiles movement
     }
 
+    //check collision before projectiles hit
     private void checkCollisions(float moveDistance)
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -51,7 +52,6 @@ public class Projectile : MonoBehaviour
         IDamageable damageableObject = hit.collider.GetComponentInParent<IDamageable>();
         if (damageableObject != null)
         {
-            //print(hit.collider.tag);
             damageableObject.takeHit(damage, hit);
         }
         GameObject.Destroy(gameObject);

@@ -19,7 +19,7 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<Player>().OnDeath += onGameOver;
+        FindObjectOfType<Player>().OnDeath += onGameOver;   //event subscription 
         player = FindObjectOfType<Player>();
     }
 
@@ -27,6 +27,7 @@ public class GameUI : MonoBehaviour
     {
         setHealth(player.getHealth());
     }
+
     void onGameOver() {
         StartCoroutine(fade(Color.clear, Color.black, 1));
         gameOverUI.SetActive(true);

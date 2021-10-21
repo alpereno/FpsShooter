@@ -40,8 +40,9 @@ public class Enemy : LivingEntity
         }
     }
 
+    //check for attack
     private void Update()
-    {
+    {   
         if (isTargetAlive)
         {
             if (Time.time > nextAttackTime)
@@ -61,6 +62,7 @@ public class Enemy : LivingEntity
         currentState = State.Idle;
     }
 
+    //Enemy Attack
     IEnumerator attack() {
         currentState = State.Attacking;
         pathfinder.enabled = false;
@@ -76,6 +78,7 @@ public class Enemy : LivingEntity
         pathfinder.enabled = true;
     }
 
+    //locating and following player
     IEnumerator updatePath() {
         float refreshRate = .25f;
         float offset = 3.5f;

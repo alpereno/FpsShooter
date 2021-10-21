@@ -25,11 +25,11 @@ public class Player : LivingEntity
     }
     private void Update()
     {
-        movementInput();
+        movementInput();    //press shift for run
         weaponInput();
         mouseRotateInputX();
         mouseRotateInputY();
-        jumpInput();
+        jumpInput();        //press space for jump
     }
 
     private void weaponInput()

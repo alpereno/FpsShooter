@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
+    //Parent class of Player and Enemy
     public float startingHealth = 100;
     protected float health;
     protected bool dead;

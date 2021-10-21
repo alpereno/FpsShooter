@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //check ground for jump
     private void checkGrounded() {
         Ray ray = new Ray(transform.position, -transform.up);
         RaycastHit hit;

@@ -28,8 +28,7 @@ public class Spawner : MonoBehaviour
 
     private void spawnEnemy()
     {
-        //we want to basically on a timer spawn however many enemies are in our current wave.
-        //we are going to need to keep track of how many enemies they are remaining to spawn.
+        //control number of enemies to spawn with a certain time
         if (enemiesRemainingToSpawn > 0 && Time.time > nextSpawnTime)
         {
             enemiesRemainingToSpawn--;
