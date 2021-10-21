@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public ParticleSystem muzzleFlash;
+
     [SerializeField] private Transform muzzle;
     [SerializeField] private Projectile projectile;
     [SerializeField] private float msBetweenShots = 100f;
     [SerializeField] private float muzzleVelocity = 35;
     [SerializeField] private int bulletsPerMagazine;
-    [SerializeField] private float reloadTime = 2f;
+    [SerializeField] private float reloadTime = 1.5f;
 
     Material gunMaterial;
     Color originalColor;
@@ -44,6 +46,8 @@ public class Gun : MonoBehaviour
             Projectile tempProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation) as Projectile;
             tempProjectile.setBulletSpeed(muzzleVelocity);
             bulletsRemainingInMagazine--;
+            muzzleFlash.Play();
+            //Destroy(Instantiate(muzzleFlash.gameObject, muzzle.transform.position, muzzle.rotation) as GameObject, muzzleFlash.main.startLifetime.constantMax);
             //recoil
             transform.localPosition -= Vector3.forward * .1f;
         }

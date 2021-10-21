@@ -97,7 +97,8 @@ public class Enemy : LivingEntity
 
     public override void takeHit(float damage, RaycastHit hit)
     {
-        Destroy(Instantiate(damageEffect.gameObject, hit.point, hit.transform.rotation) as GameObject, damageEffect.startLifetime);
+        //Destroy(Instantiate(damageEffect.gameObject, hit.point, hit.transform.rotation) as GameObject, damageEffect.main.startLifetime.constant);
+        Destroy(Instantiate(damageEffect.gameObject, hit.point, Quaternion.LookRotation(hit.normal)) as GameObject, damageEffect.main.startLifetime.constant);
         base.takeHit(damage, hit);
     }
 }

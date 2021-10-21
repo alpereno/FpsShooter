@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof (PlayerController))]
 [RequireComponent(typeof(GunController))]
 public class Player : LivingEntity
-{
+{   //player input class
     [Header ("Options")]
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 8f;

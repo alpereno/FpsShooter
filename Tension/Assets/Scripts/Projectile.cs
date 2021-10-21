@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
         IDamageable damageableObject = hit.collider.GetComponentInParent<IDamageable>();
         if (damageableObject != null)
         {
-            print(hit.collider.tag);
+            //print(hit.collider.tag);
             damageableObject.takeHit(damage, hit);
         }
         GameObject.Destroy(gameObject);

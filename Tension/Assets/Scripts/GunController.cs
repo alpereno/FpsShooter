@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour
-{//manage things (equip gun etc.)
+{   //manage things (equip gun etc.)
+    
     [SerializeField] private Transform weaponHoldT;
     [SerializeField] private Gun startingGun;
     Gun equippedGun;
