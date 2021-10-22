@@ -33,7 +33,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
         }
     }
 
-    [ContextMenu ("Self Destruct")]
     private void die()
     {
         health = 0;
