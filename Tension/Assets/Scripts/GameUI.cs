@@ -19,7 +19,7 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        // I used to event system because when UI screen doesn't exist player object must be executable.
+        // I used to event system because when GameUI screen doesn't exist player object must be executable.
         // there is no sense of in the Player script has to reference GameUI script.
         FindObjectOfType<Player>().OnDeath += onGameOver;   //event subscription 
         player = FindObjectOfType<Player>();
